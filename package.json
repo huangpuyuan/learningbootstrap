@@ -1,0 +1,18 @@
+{
+  "name": "learningbootstrap",
+  "version": "1.0.0",
+  "description": "bootstrap learing",
+  "main": "index.js",
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "bootstrap"
+  ],
+  "author": "kaitai",
+  "license": "ISC"
+}
