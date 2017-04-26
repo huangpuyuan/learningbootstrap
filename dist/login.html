@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Signin Template for Bootstrap</title>
+    <link rel="stylesheet" href="./css/font-awesome.min.css">
+    <link href="./lib/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/login.css">
+</head>
+<body>
+<div class="container">
+    <form class="form-signin" name="user" action="index.html" method="post" novalidate>
+        <h4 class="form-signin-heading text-info">名人书画展CMS登录</h4>
+        <hr>
+        <div class="input-group">
+            <label for="username" class="sr-only">username</label>
+            <div class="input-group-addon"><i class="fa fa-user-circle-o fa-lg"></i></div>
+            <input type="text" id="username" name="Username"
+                   class="form-control" ng-model="username" placeholder="用户名" required autofocus>
+            <div class="form-message" ng-show="user.Username.$dirty" ng-messages="user.Username.$error">
+                <small class="text-danger" ng-message="required">用户名不能为空</small>
+            </div>
+        </div>
+        <div class="input-group">
+            <label for="inputPassword" class="sr-only">Password</label>
+            <div class="input-group-addon"><i class="fa fa-key fa-lg"></i></div>
+            <input type="password" id="inputPassword" name="Password"
+                   class="form-control" ng-model="password" placeholder="密码" required>
+            <div class="form-message" ng-show="user.Password.$dirty" ng-messages="user.Password.$error">
+                <small class="text-danger" ng-message="required">密码不能为空</small>
+            </div>
+        </div>
+
+
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" value="remember-me">&nbsp;记住我
+            </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
+    </form>
+    <script src="./lib/js/jquery.min.js"></script>
+    <script src="./lib/js/bootstrap.min.js"></script>
+    <script src="./lib/js/angular.min.js"></script>
+    <script src="./lib/js/angular-messages.min.js"></script>
+    <script src="./js/login.js"></script>
+</div>
+</body>
+</html>

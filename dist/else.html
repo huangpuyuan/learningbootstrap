@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>bootstrap</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body ng-app="myindex" ng-controller="myCtrl">
+    <div class="container" ui-view>
+        <h2>我的资源列表<small>myRepo:</small></h2>
+        <ul class="nav nav-tabs" role="tablist" id="feature-tab">
+            <li class="{{$first?'active':''}}" ng-repeat="item in list">
+                <a href="#tab-{{item.tabs}}" role="tab" data-toggle="tab">
+                    <span class="glyphicon glyphicon-{{item.icon}}" aria-hidden="true"></span>&nbsp;{{item.name}}
+                </a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade {{$first?'active in':''}}" ng-repeat="item in list" id="tab-{{item.tabs}}">
+                <table class="table table-hover table-striped">
+                    <tr ng-repeat="value in item.details">
+                        <td>{{value.id}}</td>
+                        <td><a href="{{value.src}}" target="_blank">{{value.title}}</a></td>
+                        <td>{{value.desc}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</body>
+
+</html>
